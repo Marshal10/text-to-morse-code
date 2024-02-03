@@ -10,5 +10,11 @@ alphaToMorse = {'a': ".-", 'b': "-...", 'c': "-.-.", 'd': "-..", 'e': ".",
                 '=': "-...-", '!': "-.-.--", '/': "-..-.", '(': "-.--.", ')': "-.--.-",
                 'á': ".--.-", 'é': "..-.."}
 
-user_text=input("Write a text you want to convert into Morse code:\n")
+user_text=input("Write a text you want to convert into Morse code:\n").lower().split()
 print(user_text)
+result=[]
+for word in user_text:
+    for char in word:
+        result.append(alphaToMorse[f'{char}'])
+    
+print(' '.join(result))
