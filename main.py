@@ -15,6 +15,7 @@ print(user_text)
 result=[]
 for word in user_text:
     for char in word:
-        result.append(alphaToMorse[f'{char}'])
+        if char in alphaToMorse:
+            result.append(alphaToMorse[f'{char}'])
     
 print(' '.join(result))
